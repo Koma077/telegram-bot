@@ -26,8 +26,7 @@ public class NotificationTaskService {
         notificationTaskRepository.save(notification);
     }
 
-
-    public List check (){
+    public List check() {
         LocalDateTime dateTime = LocalDateTime.now().truncatedTo(ChronoUnit.MINUTES);
         return List.copyOf(notificationTaskRepository.findByLocalDateTime(dateTime));
     }
